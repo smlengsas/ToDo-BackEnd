@@ -16,5 +16,7 @@ use Illuminate\Http\Request;
 Route::get('getTasks', 'TasksController@index');
 Route::post('storeTask', 'TasksController@store');
 Route::get('showTask/{id}', 'TasksController@show');
+Route::get('getFirst', 'TasksController@getTask');
+Route::get('destroyOne', 'TasksController@destroyOne');
 
 Route::any('{path?}', 'MainController@index')->where("path", ".+");

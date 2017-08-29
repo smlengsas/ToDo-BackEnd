@@ -46,4 +46,20 @@ class TasksController extends Controller
 
     return Response::json(['task' => $task]);
   }
+
+  public function getFirst()
+  {
+    $task = Task::first();
+
+    return Response::json(['task' => $task]);
+  }
+
+  public function destroyOne($id)
+  {
+    $task = Task::find($id);
+    $task->delete();
+
+    return Response::json(['success' => 'Task Completed']);
+  }
+
 }
